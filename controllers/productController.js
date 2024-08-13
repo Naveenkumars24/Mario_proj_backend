@@ -14,15 +14,13 @@ exports.getProducts = async (req,res) => {
 // POST METHOD
 exports.postProducts = async (req,res) => {
   try{
-      const { title , description , price , category , image , rating} = req.body;
+      const { title , description , price , category , image} = req.body;
 
       const product = new productModel({
-        id : uuidv4(),
         title,
         description,
         category,
         price,
-        rating,
         image,
       })
       await product.save();
