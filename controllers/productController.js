@@ -24,11 +24,11 @@ exports.postProducts = async (req,res) => {
         image,
       })
       await product.save();
-      res.status(200).json("Product Created Successfullyy")     
+      res.status(200).json("Product Created Successfullyy");    
   }
   catch(err){
     console.log(err);   
-  }
+  } 
 };
 // DELETE METHOD
 exports.deleteProducts = async (req, res) => {

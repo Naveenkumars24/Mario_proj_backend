@@ -4,7 +4,9 @@ const jwt = require("jsonwebtoken");
 
 exports.getUser = async (req, res) => {
   try {
-    const userDetails = await userModel.find();
+    const user_id = req.user;
+    const userDetails = await userModel.find({_id: user_id});
+    console.log(userDetais);
     res.status(200).json(userDetails);
   } catch (err) {
     res.status(500).json(err);

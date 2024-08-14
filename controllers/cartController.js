@@ -30,7 +30,6 @@ exports.createCart = async (req, res) => {
       } else {
         cart.products.push({ productId, quantity });
       }
-
       await cart.save();
       return res.status(200).json("Cart updated successfully");
     }
