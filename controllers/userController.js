@@ -5,14 +5,13 @@ const jwt = require("jsonwebtoken");
 exports.getUser = async (req, res) => {
   try {
     const user_id = req.user.user_id; 
-    const userDetails = await userModel.find({_id: user_id});
-    console.log(userDetais);
+    const userDetails = await userModel.findById(user_id);
+    console.log(userDetails); 
     res.status(200).json(userDetails);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({ error: err.message });
   }
 };
-
 exports.signUpUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
