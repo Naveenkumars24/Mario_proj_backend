@@ -15,7 +15,6 @@ mongoose.connect("mongodb+srv://naveenkumars2022ece:Naveen2418kumar_@mariocluste
     console.log("Connected to MongoDB");
 });
 
-
 app.use('/products',productRoutes);
 app.use('/user',userRoutes);
 app.use('/cart',cartRoutes);
